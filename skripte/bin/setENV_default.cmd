@@ -1,0 +1,22 @@
+@ECHO OFF
+
+set DEV_TOOLS_DIR=%~dp0..\..\tools
+
+set JAVA=jdk-8
+set JAVA_UPDATE=u181
+set JAVA_VERSION=%JAVA%/%JAVA%%JAVA_UPDATE%
+set JAVA_HOME=%DEV_TOOLS_DIR%/java/%JAVA_VERSION%
+
+set MAVEN_VERSION=3.6.0
+set MAVEN_DIR=apache-maven
+set MAVEN_HOME=%DEV_TOOLS_DIR%/maven/%MAVEN_DIR%-%MAVEN_VERSION%
+
+REM set MAVEN_OPTS=-Xms1024m -Xmx3000m -Xss2M -Dmaven.surefire.debug=-Xmx3000m
+set MAVEN_OPTS=-Xms1024M -Xmx2048M -Xss2048M
+
+set GIT_VERSION=2.19.2
+set GIT_HOME=%DEV_TOOLS_DIR%/git/PortableGit-%GIT_VERSION%
+
+set NODEJS_HOME=%DEV_TOOLS_DIR%\nodejs\node-v10.14.2-win-x64
+
+set PATH=%MAVEN_HOME%/bin;%JAVA_HOME%/bin;%NODEJS_HOME%;%GIT_HOME%/bin;%PATH%
